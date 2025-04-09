@@ -3,6 +3,7 @@
 --git commit -m "首次提交"
 --git remote add origin git@github.com:用户名/仓库名.git
 --git push -u origin master
+-------------------------------------------------------------------------------------------
 if vim.loader then
     vim.loader.enable()
 end
