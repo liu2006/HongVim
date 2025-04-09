@@ -1,7 +1,13 @@
 return {
+    {
+        "folke/snacks.nvim",
+        priority = 1000,
+        event = "VeryLazy",
+        opts = {},
+    },
     { 
         "akinsho/bufferline.nvim",
-        lazy = false,
+        event = "VeryLazy",
         version = "*", 
         dependencies = { 
             "nvim-tree/nvim-web-devicons" 
@@ -10,37 +16,18 @@ return {
     },
     {
         "lukas-reineke/indent-blankline.nvim",
+        event = "VeryLazy",
         main = "ibl",
-        lazy = false,
         opts = { 
             indent = { 
                 char = "│",
                 tab_char = "│",
-                smart_indent_cap = false,
-            },
-            scope = { show_start = false, show_end = false },
-            exclude = { 
-                filetypes = { 
-                    "Trouble",
-                    "alpha",
-                    "dashboard",
-                    "help",
-                    "lazy",
-                    "mason",
-                    "neo-tree",
-                    "notify",
-                    "snacks_dashboard",
-                    "snacks_notif",
-                    "snacks_terminal",
-                    "snacks_win",
-                    "toggleterm",
-                    "trouble", 
-                }, 
             },
         },
     },
     { 
         "utilyre/barbecue.nvim",
+        event = "VeryLazy",
         name = "barbecue",
         version = "*", 
         dependencies = {
@@ -48,32 +35,15 @@ return {
             "nvim-tree/nvim-web-devicons",
         },
         opts = {
-            theme = "base16",
+            theme = "auto",
+            create_autocmd = false,
         },
     },
     {
         "nvim-lualine/lualine.nvim",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
         event = "VeryLazy",
-        init = function() 
-            vim.g.lualine_laststatus = vim.o.laststatus 
-            if vim.fn.argc(-1) > 0 then 
-                vim.o.statusline = " " 
-            else 
-                vim.o.laststatus = 0 
-            end 
-        end,
-        opts = {
-            options = { 
-                theme = "base16",
-                globalstatus = vim.o.laststatus == 3,
-                disabled_filetypes = { 
-                    statusline = { 
-                        "dashboard", "alpha", "ministarter", "snacks_dashboard" 
-                    }, 
-                },
-            },
-        },
+        dependencies = { "nvim-tree/nvim-web-devicons" },
+        opts = {},
     },
     { 
         "nvim-tree/nvim-web-devicons",

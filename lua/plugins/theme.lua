@@ -1,19 +1,19 @@
 return { 
-    {
-        "RRethy/base16-nvim",
-        enabled = true,
-        lazy = false,
-        priority = 1000,
-        dependencies = {
-            "nvim-lualine/lualine.nvim",
-            "utilyre/barbecue.nvim",
+    { 
+        "catppuccin/nvim", 
+        lazy = false, 
+        name = "catppuccin", 
+        priority = 1000, 
+        opts = {
+            flavour = "Frappe",
+            transparent_background = true,
+            term_colors = true,
+            default_integrations = true,
+            term_colors = true,
         },
-        config = function()
-            require('base16-colorscheme').with_config({
-                transparent = true,
-                telescope = false,
-            })
-            vim.cmd[[colorscheme base16-onedark]]
+        config = function(_, opts)
+            require("catppuccin").setup(opts)
+            vim.cmd[[colorscheme catppuccin]]
         end
     },
 }

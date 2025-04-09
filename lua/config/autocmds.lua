@@ -5,9 +5,16 @@ vim.api.nvim_create_autocmd("TextYankPost", {
         vim.highlight.on_yank()
     end,
 })
-vim.api.nvim_create_autocmd('TermOpen', {
-    pattern = '*',
-    command = 'resize 15x30',
+vim.api.nvim_create_autocmd({
+  "WinScrolled",
+  "BufWinEnter",
+  "CursorHold",
+  "InsertLeave",
+}, {
+  group = vim.api.nvim_create_augroup("barbecue.updater", {}),
+  callback = function()
+    require("barbecue.ui").update()
+  end,
 })
 
 

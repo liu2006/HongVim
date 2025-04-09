@@ -26,6 +26,8 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.fileencoding = "utf-8"
 vim.opt.clipboard = "unnamedplus"
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 --------------------------------------------------------------------------------------------
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
@@ -38,7 +40,7 @@ vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 --------------------------------------------------------------------------------------------
 vim.opt.shell = "pwsh"
-vim.opt.shellcmdflag = "-NoLogo -NoProfile -NoExit -Command",
+vim.opt.shellcmdflag = "-NoProfile -NoExit -Command",
 --------------------------------------------------------------------------------------------
 require("config.lazy")
 require("config.autocmds")
